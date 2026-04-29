@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Motivation Booster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated background particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Background music control -->
+  <button id="music-toggle" class="music-btn" aria-label="Toggle background music">
+    <svg id="music-icon-off" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+      <line x1="1" y1="1" x2="23" y2="23" stroke-width="2.5"/>
+    </svg>
+    <svg id="music-icon-on" class="icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+    </svg>
+  </button>
+
+  <main class="container">
+    <header class="hero">
+      <div class="glow-badge">✨ Your Daily Spark</div>
+      <h1>AI Motivation Booster</h1>
+      <p class="subtitle">Tap the button for a burst of inspiration crafted just for you.</p>
+    </header>
+
+    <section class="quote-card" aria-live="polite">
+      <div class="quote-inner">
+        <span class="quote-mark">"</span>
+        <p id="quote-text" class="quote-text">Press the button below to receive your first motivational boost.</p>
+        <p id="quote-author" class="quote-author"></p>
+      </div>
+    </section>
+
+    <!-- Category pills -->
+    <div class="categories" role="radiogroup" aria-label="Motivation category">
+      <button class="pill active" data-category="all">🌟 All</button>
+      <button class="pill" data-category="hustle">🔥 Hustle</button>
+      <button class="pill" data-category="calm">🧘 Calm</button>
+      <button class="pill" data-category="creative">🎨 Creative</button>
+      <button class="pill" data-category="student">📚 Student</button>
+    </div>
+
+    <button id="boost-btn" class="boost-btn">
+      <span class="btn-text">⚡ Boost Me</span>
+      <span class="btn-ripple"></span>
+    </button>
+
+    <!-- Streak counter -->
+    <div class="streak">
+      <span id="streak-count">0</span> boosts today — keep going!
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with 💜 for students &amp; creators</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

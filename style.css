@@ -1,0 +1,304 @@
+/* ── Reset & Variables ─────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b0e17;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8e6f0;
+  --text-muted: #9a95b0;
+  --accent: #a78bfa;
+  --accent-glow: rgba(167, 139, 250, 0.35);
+  --gradient: linear-gradient(135deg, #a78bfa, #6d5cff, #38bdf8);
+  --radius: 16px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Particle Canvas ──────────────────────────── */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Music Button ─────────────────────────────── */
+.music-btn {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+}
+
+.music-btn:hover {
+  background: var(--surface-hover);
+  color: var(--accent);
+}
+
+.music-btn .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ── Container ────────────────────────────────── */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  padding: 3rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+/* ── Hero ──────────────────────────────────────── */
+.hero {
+  text-align: center;
+}
+
+.glow-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 420px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* ── Quote Card ───────────────────────────────── */
+.quote-card {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.quote-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius);
+  padding: 1px;
+  background: var(--gradient);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.quote-card.glow::before {
+  opacity: 1;
+}
+
+.quote-inner {
+  position: relative;
+}
+
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.25;
+  position: absolute;
+  top: -1rem;
+  left: -0.25rem;
+}
+
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  line-height: 1.65;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.quote-text.fade-out {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.quote-author {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: opacity 0.4s ease;
+}
+
+.quote-author.fade-out {
+  opacity: 0;
+}
+
+/* ── Category Pills ───────────────────────────── */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.pill {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pill:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.pill.active {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ── Boost Button ─────────────────────────────── */
+.boost-btn {
+  position: relative;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--gradient);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.boost-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 40px var(--accent-glow);
+}
+
+.boost-btn:active {
+  transform: scale(0.97);
+}
+
+.btn-ripple {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.boost-btn:active .btn-ripple {
+  opacity: 1;
+}
+
+/* ── Streak ────────────────────────────────────── */
+.streak {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+#streak-count {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ── Footer ───────────────────────────────────── */
+footer {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .quote-card {
+    padding: 2rem 1.25rem;
+  }
+}
