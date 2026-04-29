@@ -6,13 +6,9 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
----
-
 ## 🚀 Live Demo
 
 Open `index.html` in any modern browser — no server or build step required.
-
----
 
 ## 📸 Features
 
@@ -26,8 +22,6 @@ Open `index.html` in any modern browser — no server or build step required.
 | ⌨️ **Keyboard Shortcut** | Press `Space` to instantly get a new quote |
 | 📱 **Fully Responsive** | Works seamlessly on desktop, tablet, and mobile |
 
----
-
 ## 🗂️ Project Structure
 
 ```
@@ -38,15 +32,11 @@ AI-Motivation-Booster/
 └── README.md     # You are here
 ```
 
----
-
 ## 🛠️ Tech Stack
 
 - **HTML5** — Semantic markup with accessibility (`aria-live`, `aria-label`)
 - **CSS3** — Custom properties, gradient borders, glassmorphism, smooth transitions
 - **Vanilla JavaScript** — Zero dependencies, Web Audio API for music, Canvas API for particles
-
----
 
 ## 💬 Quote Categories
 
@@ -56,8 +46,6 @@ The app includes **40 hand-picked motivational quotes** across four categories:
 - 🧘 **Calm** — For when you need to breathe and reset
 - 🎨 **Creative** — For artists, designers, and makers
 - 📚 **Student** — For learners and knowledge seekers
-
----
 
 ## 🏁 Getting Started
 
@@ -75,16 +63,12 @@ The app includes **40 hand-picked motivational quotes** across four categories:
 
 That's it — no `npm install`, no build tools, no dependencies.
 
----
-
 ## 🎮 How to Use
 
 1. Click **⚡ Boost Me** or press **Space** to get a motivational quote
 2. Use the **category pills** to filter quotes by mood
 3. Click the **🎵 icon** (top-right) to toggle ambient background music
 4. Keep boosting — watch your **streak counter** grow!
-
----
 
 ## 🤝 Contributing
 
@@ -95,12 +79,8 @@ Contributions are welcome! Feel free to:
 - Add new categories
 - Enhance accessibility
 
----
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
 
 <p align="center">Made with 💜 for students & creators</p>
